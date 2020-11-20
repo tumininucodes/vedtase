@@ -13,16 +13,16 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_dashboard.*
+import kotlinx.android.synthetic.main.activity_todolist.*
 
 
-class DashboardActivity : AppCompatActivity() {
+class TodoListActivity : AppCompatActivity() {
 
     lateinit var dbHandler: DBHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+        setContentView(R.layout.activity_todolist)
         setSupportActionBar(dashboard_toolbar)
         title = "ToDo List"
         dbHandler = DBHandler(this)
@@ -32,7 +32,7 @@ class DashboardActivity : AppCompatActivity() {
 
             val dialog = AlertDialog.Builder(this)
             dialog.setTitle("Add ToDo")
-            val view = layoutInflater.inflate(R.layout.dialog_dashboard, null)
+            val view = layoutInflater.inflate(R.layout.dialog_todolist, null)
             val toDoName = view.findViewById<EditText>(R.id.ev_todo)
             dialog.setView(view)
             dialog.setPositiveButton("Add") { _: DialogInterface, _: Int ->
@@ -54,7 +54,7 @@ class DashboardActivity : AppCompatActivity() {
     fun updateToDo(toDo: ToDo) {
         val dialog = AlertDialog.Builder(this)
         dialog.setTitle("Update ToDo")
-        val view = layoutInflater.inflate(R.layout.dialog_dashboard, null)
+        val view = layoutInflater.inflate(R.layout.dialog_todolist, null)
         val toDoName = view.findViewById<EditText>(R.id.ev_todo)
         toDoName.setText(toDo.name)
         dialog.setView(view)
@@ -81,11 +81,11 @@ class DashboardActivity : AppCompatActivity() {
     }
 
 
-    class DashboardAdapter(val activity: DashboardActivity, val list: MutableList<ToDo>) :
+    class DashboardAdapter(val activity: TodoListActivity, val list: MutableList<ToDo>) :
         RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
         override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
             return ViewHolder(
-                LayoutInflater.from(activity).inflate(R.layout.rv_child_dashboard, p0, false)
+                LayoutInflater.from(activity).inflate(R.layout.rv_child_todolist, p0, false)
             )
         }
 
@@ -105,7 +105,7 @@ class DashboardActivity : AppCompatActivity() {
 
             holder.menu.setOnClickListener {
                 val popup = PopupMenu(activity, holder.menu)
-                popup.inflate(R.menu.dashboard_child)
+                popup.inflate(R.menu.todo_item_menu)
                 popup.setOnMenuItemClickListener {
 
                     when (it.itemId) {
