@@ -96,13 +96,6 @@ class TodoListActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: ViewHolder, p1: Int) {
             holder.toDoName.text = list[p1].name
 
-//            holder.toDoName.setOnClickListener {
-//                val intent = Intent(activity,ItemActivity::class.java)
-//                intent.putExtra(INTENT_TODO_ID,list[p1].id)
-//                intent.putExtra(INTENT_TODO_NAME,list[p1].name)
-//                activity.startActivity(intent)
-//            }
-
             holder.menu.setOnClickListener {
                 val popup = PopupMenu(activity, holder.menu)
                 popup.inflate(R.menu.todo_item_menu)
