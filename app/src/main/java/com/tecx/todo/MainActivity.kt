@@ -13,10 +13,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
-
         ic_logo.startAnimation(AnimationUtils.loadAnimation(this, R.anim.splash_in))
+
 
         Handler().postDelayed({
 
@@ -33,5 +32,4 @@ class MainActivity : AppCompatActivity() {
         }, 1500)
 
     }
-
 }
