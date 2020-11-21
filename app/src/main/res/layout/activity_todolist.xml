@@ -18,6 +18,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dashboard"
         android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
         android:scrollbars="vertical"
         android:layout_height="match_parent"
         android:layout_below="@+id/dashboard_toolbar" />

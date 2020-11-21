@@ -23,7 +23,7 @@
             android:id="@+id/tv_todo_name"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/rounded_corners"
             android:fontFamily="@font/product_sans_regular"
             android:gravity="start|center_vertical"

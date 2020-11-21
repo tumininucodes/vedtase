@@ -6,5 +6,8 @@
     <string name="mark_as_completed">Mark as completed</string>
     <string name="reset">Reset</string>
     <string name="about">About</string>
+    <string name="about_app">ToDo App\nVersion: 1.0\
+    \nDeveloped by: Tumininu
+    \nDeveloper\'s contact: oluwatumininuojo25@gmail.com</string>
 
 </resources>

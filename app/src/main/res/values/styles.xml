@@ -8,7 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorSecondary">@color/colorPrimary</item>
         <item name="colorOnSecondary">@color/colorWhite</item>
-        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="ActionBarText" parent="TextAppearance.AppCompat">

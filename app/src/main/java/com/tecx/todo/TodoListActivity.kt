@@ -2,10 +2,9 @@ package com.tecx.todo
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.PopupMenu
@@ -71,6 +70,35 @@ class TodoListActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.menu_about, menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return when (item.itemId) {
+
+            R.id.menu_item_about -> {
+                inflateAboutMe()
+                true
+            }
+            else -> return super.onOptionsItemSelected(item)
+
+        }
+
+    }
+
+    private fun inflateAboutMe() {
+
+        startActivity(Intent(this, AboutMe::class.java))
+
+    }
+
+
 
     fun updateToDo(toDo: ToDo) {
 
