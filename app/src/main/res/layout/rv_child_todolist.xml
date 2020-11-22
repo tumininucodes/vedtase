@@ -22,7 +22,7 @@
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/product_sans_regular"
         android:gravity="start|center_vertical"
-        android:padding="8dp"
+        android:padding="12dp"
         android:text="@string/task"
         android:textColor="@color/colorBlack"
         android:textSize="16sp" />
