@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".TodoListActivity">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/dashboard_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?android:actionBarSize"
+        android:layout_height="56dp"
+        app:menu="@menu/menu_about"
+        app:titleTextAppearance="@style/ActionBarText"
         android:background="@color/colorPrimaryDark"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:titleTextAppearance="@style/ActionBarText" />
+        app:titleTextColor="@color/colorWhite"
+        app:title="ToDo" />
 
 
     <androidx.recyclerview.widget.RecyclerView
