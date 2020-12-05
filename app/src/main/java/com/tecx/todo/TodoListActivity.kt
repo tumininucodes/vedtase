@@ -46,6 +46,7 @@ class TodoListActivity : AppCompatActivity() {
 
             dialog.setTitle("Add ToDo")
 
+
             val view = layoutInflater.inflate(R.layout.dialog_todolist, null)
             val toDoName = view.findViewById<EditText>(R.id.ev_todo)
 
