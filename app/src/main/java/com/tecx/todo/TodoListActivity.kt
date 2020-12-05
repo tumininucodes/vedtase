@@ -26,9 +26,6 @@ class TodoListActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_todolist)
 
-        // custom action bar
-        setSupportActionBar(dashboard_toolbar)
-
         // sets the title of the tool bar
         title = "ToDo List"
 

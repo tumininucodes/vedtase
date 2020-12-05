@@ -27,9 +27,9 @@
                 app:cardCornerRadius="8dp">
 
                 <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/dashboard_toolbar"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="match_parent"
-                    android:id="@+id/dashboard_toolbar"
                     android:layout_height="48dp">
 
                     <LinearLayout
@@ -40,7 +40,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/abc_vector_test" />
+                            android:src="@drawable/ic_baseline_menu_open_24" />
 
                         <com.google.android.material.textview.MaterialTextView
                             style="@style/ActionBarText"
