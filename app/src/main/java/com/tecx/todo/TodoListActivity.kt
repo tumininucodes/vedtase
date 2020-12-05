@@ -4,7 +4,9 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.PopupMenu
@@ -12,6 +14,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_todolist.*
 
 
@@ -26,6 +29,8 @@ class TodoListActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_todolist)
 
+        setSupportActionBar(dashboard_toolbar)
+
         // sets the title of the tool bar
         title = "ToDo List"
 
@@ -39,7 +44,7 @@ class TodoListActivity : AppCompatActivity() {
         // this creates a todo task
         fab_dashboard.setOnClickListener {
 
-            val dialog = AlertDialog.Builder(this)
+            val dialog = MaterialAlertDialogBuilder(this)
 
             dialog.setTitle("Add ToDo")
 
@@ -69,33 +74,32 @@ class TodoListActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-
-        menuInflater.inflate(R.menu.menu_about, menu)
-
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        return when (item.itemId) {
-
-            R.id.menu_item_about -> {
-                inflateAboutMe()
-                true
-            }
-            else -> return super.onOptionsItemSelected(item)
-
-        }
-
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//
+//        menuInflater.inflate(R.menu.menu_about, menu)
+//
+//        return super.onCreateOptionsMenu(menu)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//
+//        return when (item.itemId) {
+//
+//            R.id.menu_item_about -> {
+//                inflateAboutMe()
+//                true
+//            }
+//            else -> return super.onOptionsItemSelected(item)
+//
+//        }
+//
+//    }
 
     private fun inflateAboutMe() {
 
         startActivity(Intent(this, AboutMe::class.java))
 
     }
-
 
 
     fun updateToDo(toDo: ToDo) {

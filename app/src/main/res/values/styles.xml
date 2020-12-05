@@ -4,8 +4,9 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorWhite</item>
+        <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
         <item name="colorOnSecondary">@color/colorWhite</item>
         <item name="colorControlNormal">@color/colorWhite</item>
     </style>
@@ -15,5 +16,24 @@
         <item name="fontFamily">@font/product_sans_regular</item>
     </style>
 
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="titleTextStyle">@style/DialogTitleStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="fontFamily">@font/product_sans_regular</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="fontFamily">@font/product_sans_regular</item>
+    </style>
+
+    <style name="DialogTitleStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="fontFamily">@font/product_sans_regular</item>
+    </style>
 
 </resources>
