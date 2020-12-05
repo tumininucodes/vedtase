@@ -5,13 +5,12 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">#03121212</item>
+        <item name="colorAccent">@color/colorWhite</item>
         <item name="colorControlNormal">@color/colorWhite</item>
         <item name="colorSecondary">@color/colorPrimary</item>
         <item name="colorOnSecondary">@color/colorWhite</item>
         <item name="android:textColor">@color/colorWhite</item>
-        <item name="background">@color/colorBlack</item>
-        <item name="dialogCornerRadius">12dp</item>
+        <item name="dialogCornerRadius">34dp</item>
         <item name="colorOnSurface">@color/colorWhite</item>
     </style>
 
