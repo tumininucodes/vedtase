@@ -10,5 +10,11 @@
     \nDeveloped by: Tumininu
     \nDeveloper\'s contact: \noluwatumininuojo25@gmail.com</string>
     <string name="fab">fab</string>
+    <string name="navigation_drawer_icon">navigation_drawer_icon</string>
+    <string name="oluwatumininuojo25_gmail_com">oluwatumininuojo25@gmail.com</string>
+    <string name="version_1_1_0">Version 1.1.0</string>
+    <string name="designed_and_developed_by">Designed And Developed by</string>
+    <string name="tumininu_ojo">Tumininu Ojo</string>
+    <string name="https_github_com_tumininucodes">https://github.com/TumininuCodes</string>
 
 </resources>

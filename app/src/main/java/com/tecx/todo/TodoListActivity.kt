@@ -2,7 +2,6 @@ package com.tecx.todo
 
 import android.app.AlertDialog
 import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -26,13 +25,8 @@ class TodoListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_todolist)
-
         setSupportActionBar(dashboard_toolbar)
-
-        // sets the title of the tool bar
-        title = "ToDo List"
 
         // create an object of Dbhandler
         dbHandler = DBHandler(this)
@@ -45,9 +39,7 @@ class TodoListActivity : AppCompatActivity() {
         fab_dashboard.setOnClickListener {
 
             val dialog = MaterialAlertDialogBuilder(this)
-
             dialog.setTitle("Add ToDo")
-
 
             val view = layoutInflater.inflate(R.layout.dialog_todolist, null)
             val toDoName = view.findViewById<EditText>(R.id.ev_todo)
@@ -55,127 +47,72 @@ class TodoListActivity : AppCompatActivity() {
             dialog.setView(view)
 
             dialog.setPositiveButton("Add") { _: DialogInterface, _: Int ->
-
                 if (toDoName.text.isNotEmpty()) {
-
                     val toDo = ToDo()
                     toDo.name = toDoName.text.toString()
                     dbHandler.addToDo(toDo)
                     refreshList()
-
                 }
             }
 
-            dialog.setNegativeButton("Cancel") { _: DialogInterface, _: Int ->
-
-            }
+            dialog.setNegativeButton("Cancel") { _: DialogInterface, _: Int -> }
             dialog.show()
         }
 
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//
-//        menuInflater.inflate(R.menu.menu_about, menu)
-//
-//        return super.onCreateOptionsMenu(menu)
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//
-//        return when (item.itemId) {
-//
-//            R.id.menu_item_about -> {
-//                inflateAboutMe()
-//                true
-//            }
-//            else -> return super.onOptionsItemSelected(item)
-//
-//        }
-//
-//    }
-
-    private fun inflateAboutMe() {
-
-        startActivity(Intent(this, AboutMe::class.java))
-
-    }
-
 
     fun updateToDo(toDo: ToDo) {
-
         val dialog = AlertDialog.Builder(this)
-
         dialog.setTitle("Update ToDo")
-
         val view = layoutInflater.inflate(R.layout.dialog_todolist, null)
         val toDoName = view.findViewById<EditText>(R.id.ev_todo)
-
         toDoName.setText(toDo.name)
-
         dialog.setView(view)
 
         dialog.setPositiveButton("Update") { _: DialogInterface, _: Int ->
-
             if (toDoName.text.isNotEmpty()) {
-
                 toDo.name = toDoName.text.toString()
                 dbHandler.updateToDo(toDo)
                 refreshList()
-
             }
         }
 
-        dialog.setNegativeButton("Cancel") { _: DialogInterface, _: Int ->
-
-        }
+        dialog.setNegativeButton("Cancel") { _: DialogInterface, _: Int -> }
         dialog.show()
     }
 
     override fun onResume() {
-
         refreshList()
         super.onResume()
-
     }
 
     private fun refreshList() {
-
         rv_dashboard.adapter = DashboardAdapter(this, dbHandler.getToDos())
-
     }
 
 
     class DashboardAdapter(val activity: TodoListActivity, val list: MutableList<ToDo>) :
-
         RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
-
             return ViewHolder(
-
                 LayoutInflater.from(activity).inflate(R.layout.rv_child_todolist, p0, false)
-
             )
         }
 
         override fun getItemCount(): Int {
-
             return list.size
-
         }
 
         override fun onBindViewHolder(holder: ViewHolder, p1: Int) {
-
             holder.toDoName.text = list[p1].name
 
             holder.menu.setOnClickListener {
-
                 val popup = PopupMenu(activity, holder.menu)
-
                 popup.inflate(R.menu.todo_item_menu)
-                popup.setOnMenuItemClickListener {
 
+                popup.setOnMenuItemClickListener {
                     when (it.itemId) {
 
                         R.id.menu_edit -> {
@@ -186,7 +123,6 @@ class TodoListActivity : AppCompatActivity() {
                             activity.dbHandler.deleteToDo(list[p1].id)
                             activity.refreshList()
                         }
-
                     }
 
                     true
@@ -196,10 +132,8 @@ class TodoListActivity : AppCompatActivity() {
         }
 
         class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-
             val toDoName: TextView = v.findViewById(R.id.tv_todo_name)
             val menu: ImageView = v.findViewById(R.id.iv_menu)
-
         }
     }
 }
