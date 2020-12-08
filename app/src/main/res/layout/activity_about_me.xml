@@ -7,11 +7,12 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:layout_width="match_parent"
-        app:title="About"
-        android:elevation="12dp"
+        android:id="@+id/about_toolbar"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
+        android:elevation="12dp"
         app:navigationIcon="@drawable/abc_vector_test"
-        android:layout_height="wrap_content" />
+        app:title="About" />
 
 
     <androidx.cardview.widget.CardView

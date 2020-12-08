@@ -2,14 +2,17 @@ package com.tecx.todo
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +23,7 @@ import kotlinx.android.synthetic.main.activity_todolist.*
 class TodoListActivity : AppCompatActivity() {
 
     lateinit var dbHandler: DBHandler
+    lateinit var toggle: ActionBarDrawerToggle
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,14 +32,12 @@ class TodoListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_todolist)
         setSupportActionBar(dashboard_toolbar)
 
-        // create an object of Dbhandler
+        setUpNavigationDrawer()
+
         dbHandler = DBHandler(this)
 
-        // sets layout manager for recycler view to linear layout
         rv_dashboard.layoutManager = LinearLayoutManager(this)
 
-        // on click listener for the floating action button
-        // this creates a todo task
         fab_dashboard.setOnClickListener {
 
             val dialog = MaterialAlertDialogBuilder(this)
@@ -136,4 +138,28 @@ class TodoListActivity : AppCompatActivity() {
             val menu: ImageView = v.findViewById(R.id.iv_menu)
         }
     }
+
+    private fun setUpNavigationDrawer() {
+        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        navView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.menu_item_about -> {
+                    startActivity(Intent(this, AboutMe::class.java))
+                }
+            }
+            true
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
