@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
     android:layout_marginBottom="4dp"
-    app:cardBackgroundColor="#0FACABAB"
-    android:elevation="4dp"
-    app:cardCornerRadius="5dp"
-    android:layout_width="match_parent">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="12dp">
-
-        <ImageView
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:layout_weight="0"
-            android:src="@drawable/ic_outline_check_24" />
+        android:elevation="4dp"
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_todo_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/product_sans_regular"
-            android:gravity="start|center_vertical"
-            android:padding="12dp"
             android:clickable="true"
             android:focusable="true"
+            android:fontFamily="@font/product_sans_regular"
+            android:textColor="#595959"
+            android:gravity="start|center_vertical"
+            android:padding="12dp"
             android:text="@string/task"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp" />
+            android:textSize="17sp" />
 
         <ImageView
             android:id="@+id/iv_menu"
             android:layout_width="24dp"
+            android:layout_height="40dp"
+            android:layout_weight="0"
             android:clickable="true"
             android:focusable="true"
             android:padding="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="0"
             android:src="@drawable/ic_more" />
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="4dp"
+        android:background="#9A9A9A" />
+
+
+</LinearLayout>

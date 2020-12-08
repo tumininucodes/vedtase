@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ToDo</string>
+    <string name="app_name">Todo List</string>
     <string name="task">Task</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
@@ -18,5 +18,9 @@
     <string name="designed_and_developed_by">Designed And Developed by</string>
     <string name="tumininu_ojo">Tumininu Ojo</string>
     <string name="https_github_com_tumininucodes">https://github.com/TumininuCodes</string>
+    <string name="the_rapidity_to_which_we_humans_forget_is_astonishing">The rapidity to which we humans forget is astonishing</string>
+    <string name="todo_list">Todo List</string>
+    <string name="backup">Backup</string>
+    <string name="export">Export</string>
 
 </resources>

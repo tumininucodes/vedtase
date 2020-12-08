@@ -1,6 +1,5 @@
 package com.tecx.todo
 
-import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
@@ -8,10 +7,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.PopupMenu
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,7 +37,7 @@ class TodoListActivity : AppCompatActivity() {
         fab_dashboard.setOnClickListener {
 
             val dialog = MaterialAlertDialogBuilder(this)
-            dialog.setTitle("Add ToDo")
+            dialog.setTitle("Add Todo")
 
             val view = layoutInflater.inflate(R.layout.dialog_todolist, null)
             val toDoName = view.findViewById<EditText>(R.id.ev_todo)
@@ -65,8 +61,8 @@ class TodoListActivity : AppCompatActivity() {
 
 
     fun updateToDo(toDo: ToDo) {
-        val dialog = AlertDialog.Builder(this)
-        dialog.setTitle("Update ToDo")
+        val dialog = MaterialAlertDialogBuilder(this)
+        dialog.setTitle("Update Todo")
         val view = layoutInflater.inflate(R.layout.dialog_todolist, null)
         val toDoName = view.findViewById<EditText>(R.id.ev_todo)
         toDoName.setText(toDo.name)
@@ -150,6 +146,14 @@ class TodoListActivity : AppCompatActivity() {
                 R.id.menu_item_about -> {
                     startActivity(Intent(this, AboutMe::class.java))
                 }
+
+                R.id.menu_item_backup -> {
+                    Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show()
+                }
+
+                R.id.menu_item_export -> {
+                    Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show()
+                }
             }
             true
         }
@@ -160,6 +164,12 @@ class TodoListActivity : AppCompatActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        finishActivity(1)
     }
 
 }

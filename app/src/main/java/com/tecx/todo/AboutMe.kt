@@ -15,9 +15,20 @@ class AboutMe : AppCompatActivity() {
         setSupportActionBar(about_toolbar)
 
         about_toolbar.setNavigationOnClickListener {
+
             Toast.makeText(this, "Thanks!", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, TodoListActivity::class.java))
             finish()
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        Toast.makeText(this, "Thanks!", Toast.LENGTH_SHORT).show()
+        startActivity(Intent(this, TodoListActivity::class.java))
+        finish()
+
+        finishActivity(0)
     }
 }

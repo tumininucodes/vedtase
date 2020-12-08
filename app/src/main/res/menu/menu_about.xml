@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/menu_item_about"
-        android:icon="@drawable/ic_info"
-        android:title="@string/about" />
+    <group>
+
+        <item
+            android:id="@+id/menu_item_backup"
+            android:icon="@drawable/ic_outline_backup_24"
+            android:title="@string/backup" />
+
+        <item
+            android:id="@+id/menu_item_export"
+            android:icon="@drawable/ic_baseline_send_24"
+            android:title="@string/export" />
+
+        <item
+            android:id="@+id/menu_item_about"
+            android:icon="@drawable/ic_info"
+            android:title="@string/about" />
+
+    </group>
+
 
 </menu>
