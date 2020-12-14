@@ -6,11 +6,24 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorPrimaryVariant">@color/colorBlack</item>
-        <item name="colorAccent">@color/colorPrimary</item>
-        <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
-        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorAccent">@color/colorBlack</item>
+        <item name="materialAlertDialogTheme">@style/MaterialAlertDialog.Rounded</item>
+        <item name="colorSecondary">@color/colorPrimary</item>
         <item name="colorOnSecondary">@color/colorWhite</item>
         <item name="colorControlNormal">@color/colorWhite</item>
+    </style>
+
+    <style name="MaterialAlertDialog.Rounded" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay.MaterialAlertDialog.Rounded
+        </item>
+        <item name="materialAlertDialogTitleTextStyle">@style/DialogTitleStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MaterialAlertDialog.Rounded" parent="">
+        <item name="cornerSize">10dp</item>
     </style>
 
     <style name="ActionBarText" parent="TextAppearance.MaterialComponents.Headline1">
@@ -18,25 +31,18 @@
         <item name="fontFamily">@font/product_sans_regular</item>
     </style>
 
-    <style name="AlertDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
-        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
-        <item name="materialAlertDialogTitleTextStyle">@style/DialogTitleStyle</item>
-        <item name="cornerRadius">12dp</item>
-        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
-    </style>
-
     <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textColor">@color/colorBlack</item>
-        <!--                <item name="fontFamily">@font/product_sans_regular</item>-->
+        <item name="fontFamily">@font/product_sans_regular</item>
     </style>
 
     <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textColor">@color/colorBlack</item>
-        <!--        <item name="fontFamily">@font/product_sans_regular</item>-->
+        <item name="fontFamily">@font/product_sans_regular</item>
     </style>
 
     <style name="DialogTitleStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
-        <item name="font">@font/product_sans_regular</item>
+        <item name="fontFamily">@font/product_sans_regular</item>
     </style>
 
 </resources>

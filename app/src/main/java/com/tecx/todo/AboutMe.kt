@@ -2,7 +2,6 @@ package com.tecx.todo
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_about_me.*
 
@@ -15,7 +14,6 @@ class AboutMe : AppCompatActivity() {
         setSupportActionBar(about_toolbar)
 
         about_toolbar.setNavigationOnClickListener {
-            Toast.makeText(this, "Thanks!", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, TodoListActivity::class.java))
             overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left)
             finish()

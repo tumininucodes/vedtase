@@ -83,7 +83,7 @@ class TodoListActivity : AppCompatActivity() {
     }
 
     fun updateToDo(toDo: ToDo) {
-        val dialog = MaterialAlertDialogBuilder(this)
+        val dialog = MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
         dialog.setTitle(getString(R.string.update_todo))
         val view = layoutInflater.inflate(R.layout.dialog_todolist, null)
         val toDoName = view.findViewById<EditText>(R.id.ev_todo)
