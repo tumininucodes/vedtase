@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/ev_todo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

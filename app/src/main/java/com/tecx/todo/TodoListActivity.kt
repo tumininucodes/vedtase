@@ -3,12 +3,8 @@ package com.tecx.todo
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.*
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,26 +15,17 @@ import kotlinx.android.synthetic.main.activity_todolist.*
 class TodoListActivity : AppCompatActivity() {
 
     lateinit var dbHandler: DBHandler
-    lateinit var toggle: ActionBarDrawerToggle
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_todolist)
         setSupportActionBar(dashboard_toolbar)
-
-        setUpNavigationDrawer()
-
         dbHandler = DBHandler(this)
-
         rv_dashboard.layoutManager = LinearLayoutManager(this)
 
         fab_dashboard.setOnClickListener {
-
             val dialog = MaterialAlertDialogBuilder(this)
-            dialog.setTitle("Add Todo")
-
+            dialog.setTitle(getString(R.string.add_todo))
             val view = layoutInflater.inflate(R.layout.dialog_todolist, null)
             val toDoName = view.findViewById<EditText>(R.id.ev_todo)
 
@@ -54,15 +41,50 @@ class TodoListActivity : AppCompatActivity() {
             }
 
             dialog.setNegativeButton("Cancel") { _: DialogInterface, _: Int -> }
-            dialog.show()
+            dialog.create().show()
         }
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_about, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.menu_item_backup -> {
+                Toast.makeText(this, "coming soon", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.menu_item_export -> {
+                Toast.makeText(this, "coming soon", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.menu_item_about -> {
+                startActivity(Intent(this, AboutMe::class.java))
+                finish()
+                finishActivity(0)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishActivity(1)
+    }
+
+    override fun onResume() {
+        refreshList()
+        super.onResume()
+    }
 
     fun updateToDo(toDo: ToDo) {
         val dialog = MaterialAlertDialogBuilder(this)
-        dialog.setTitle("Update Todo")
+        dialog.setTitle(getString(R.string.update_todo))
         val view = layoutInflater.inflate(R.layout.dialog_todolist, null)
         val toDoName = view.findViewById<EditText>(R.id.ev_todo)
         toDoName.setText(toDo.name)
@@ -77,12 +99,7 @@ class TodoListActivity : AppCompatActivity() {
         }
 
         dialog.setNegativeButton("Cancel") { _: DialogInterface, _: Int -> }
-        dialog.show()
-    }
-
-    override fun onResume() {
-        refreshList()
-        super.onResume()
+        dialog.create().show()
     }
 
     private fun refreshList() {
@@ -90,7 +107,10 @@ class TodoListActivity : AppCompatActivity() {
     }
 
 
-    class DashboardAdapter(val activity: TodoListActivity, val list: MutableList<ToDo>) :
+    class DashboardAdapter(
+        private val activity: TodoListActivity,
+        private val list: MutableList<ToDo>
+    ) :
         RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
@@ -134,42 +154,4 @@ class TodoListActivity : AppCompatActivity() {
             val menu: ImageView = v.findViewById(R.id.iv_menu)
         }
     }
-
-    private fun setUpNavigationDrawer() {
-        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        navView.setNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.menu_item_about -> {
-                    startActivity(Intent(this, AboutMe::class.java))
-                }
-
-                R.id.menu_item_backup -> {
-                    Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show()
-                }
-
-                R.id.menu_item_export -> {
-                    Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show()
-                }
-            }
-            true
-        }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-
-        finishActivity(1)
-    }
-
 }

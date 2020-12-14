@@ -1,60 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/dashboard_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="12dp"
+        app:title="@string/app_name"
+        app:titleTextAppearance="@style/ActionBarText"
+        app:titleTextColor="@color/colorWhite" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/dashboard_toolbar"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_dashboard"
             android:layout_width="match_parent"
-            app:titleTextColor="@color/colorWhite"
-            android:background="@color/colorPrimary"
-            android:elevation="12dp"
+            android:layout_height="match_parent"
+            android:overScrollMode="always" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_dashboard"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:title="@string/app_name"
-            app:titleTextAppearance="@style/ActionBarText" />
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/fab"
+            android:elevation="40dp"
+            android:src="@drawable/ic_add_black_24dp"
+            app:rippleColor="@color/colorWhite" />
+    </FrameLayout>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_dashboard"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:overScrollMode="always" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_dashboard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|bottom"
-                android:layout_margin="16dp"
-                android:contentDescription="@string/fab"
-                android:elevation="40dp"
-                android:src="@drawable/ic_add_black_24dp"
-                app:rippleColor="@color/colorWhite" />
-        </FrameLayout>
-
-    </LinearLayout>
-
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/main_header"
-        app:menu="@menu/menu_about" />
-
-
-</androidx.drawerlayout.widget.DrawerLayout>
-
+</LinearLayout>

@@ -10,24 +10,24 @@
         <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
         <item name="colorSecondary">@color/colorSecondary</item>
         <item name="colorOnSecondary">@color/colorWhite</item>
-        <item name="android:navigationBarColor">@color/colorPrimary</item>
         <item name="colorControlNormal">@color/colorWhite</item>
     </style>
 
-    <style name="ActionBarText" parent="TextAppearance.AppCompat">
+    <style name="ActionBarText" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="android:textSize">20sp</item>
         <item name="fontFamily">@font/product_sans_regular</item>
     </style>
 
-    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+    <style name="AlertDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
         <item name="materialAlertDialogTitleTextStyle">@style/DialogTitleStyle</item>
+        <item name="cornerRadius">12dp</item>
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
     </style>
 
     <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textColor">@color/colorBlack</item>
-        <!--        <item name="fontFamily">@font/product_sans_regular</item>-->
+        <!--                <item name="fontFamily">@font/product_sans_regular</item>-->
     </style>
 
     <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
