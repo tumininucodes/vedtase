@@ -9,8 +9,8 @@
         android:id="@+id/ev_todo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textAutoCorrect|textCapSentences"
-        android:textColor="@color/gray"
-        android:fontFamily="@font/product_sans_regular" />
+        android:fontFamily="@font/product_sans_regular"
+        android:inputType="textAutoCorrect|textMultiLine|textCapSentences"
+        android:textColor="@color/gray" />
 
 </LinearLayout>

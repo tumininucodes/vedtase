@@ -6,7 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorPrimaryVariant">@color/colorBlack</item>
-        <item name="colorAccent">#5C5C5C</item>
+        <item name="colorAccent">@color/gray</item>
+        <item name="popupTheme">@style/Popup.round</item>
         <item name="materialAlertDialogTheme">@style/MaterialAlertDialog.Rounded</item>
         <item name="colorSecondary">@color/colorPrimary</item>
         <item name="colorOnSecondary">@color/colorWhite</item>
@@ -20,6 +21,10 @@
         <item name="materialAlertDialogTitleTextStyle">@style/DialogTitleStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="Popup.round" parent="Widget.AppCompat.Light.PopupMenu">
+        <item name="cornerRadius">12dp</item>
     </style>
 
     <style name="ShapeAppearanceOverlay.MaterialAlertDialog.Rounded" parent="">

@@ -127,7 +127,7 @@ class TodoListActivity : AppCompatActivity() {
             holder.toDoName.text = list[p1].name
 
             holder.menu.setOnClickListener {
-                val popup = PopupMenu(activity, holder.menu)
+                val popup = PopupMenu(activity, holder.menu, R.style.Popup_round)
                 popup.inflate(R.menu.todo_item_menu)
 
                 popup.setOnMenuItemClickListener {
