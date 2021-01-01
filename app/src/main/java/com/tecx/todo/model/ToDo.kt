@@ -1,4 +1,4 @@
-package com.tecx.todo
+package com.tecx.todo.model
 
 class ToDo {
 
