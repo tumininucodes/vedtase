@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.tecx.todo.R
-import com.tecx.todo.TodoListActivity
+import com.tecx.todo.ui.TodoListActivity
 import kotlinx.android.synthetic.main.activity_about_me.*
 
 class AboutMe : AppCompatActivity() {

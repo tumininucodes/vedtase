@@ -3,6 +3,7 @@ package com.tecx.todo
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.tecx.todo.ui.TodoListActivity
 
 class MainActivity : AppCompatActivity() {
 
