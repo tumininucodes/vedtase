@@ -1,4 +1,4 @@
-package com.tecx.todo
+package com.tecx.todo.db
 
 const val DB_NAME = "ToDoList"
 const val DB_VERSION = 1

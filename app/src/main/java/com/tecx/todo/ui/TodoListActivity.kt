@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.tecx.todo.DBHandler
+import com.tecx.todo.db.DBHandler
 import com.tecx.todo.R
 import com.tecx.todo.model.ToDo
 import kotlinx.android.synthetic.main.activity_todolist.*

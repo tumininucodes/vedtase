@@ -1,14 +1,19 @@
-package com.tecx.todo
+package com.tecx.todo.db
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.tecx.todo.db.*
 import com.tecx.todo.model.ToDo
 import java.util.*
 
 
-class DBHandler(val context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
+class DBHandler(val context: Context) : SQLiteOpenHelper(
+    context,
+    DB_NAME, null,
+    DB_VERSION
+) {
 
     override fun onCreate(db: SQLiteDatabase) {
 
