@@ -1,4 +1,4 @@
-package com.tecx.todo
+package com.tecx.todo.ui
 
 import android.content.DialogInterface
 import android.content.Intent
@@ -9,7 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.tecx.todo.ui.AboutMe
+import com.tecx.todo.DBHandler
+import com.tecx.todo.R
+import com.tecx.todo.ToDo
 import kotlinx.android.synthetic.main.activity_todolist.*
 
 
@@ -84,7 +86,10 @@ class TodoListActivity : AppCompatActivity() {
     }
 
     fun updateToDo(toDo: ToDo) {
-        val dialog = MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
+        val dialog = MaterialAlertDialogBuilder(
+            this,
+            R.style.MaterialAlertDialog_Rounded
+        )
         dialog.setTitle(getString(R.string.update_todo))
         val view = layoutInflater.inflate(R.layout.dialog_todolist, null)
         val toDoName = view.findViewById<EditText>(R.id.ev_todo)
@@ -104,7 +109,11 @@ class TodoListActivity : AppCompatActivity() {
     }
 
     private fun refreshList() {
-        rv_dashboard.adapter = DashboardAdapter(this, dbHandler.getToDos())
+        rv_dashboard.adapter =
+            DashboardAdapter(
+                this,
+                dbHandler.getToDos()
+            )
     }
 
 
@@ -116,7 +125,8 @@ class TodoListActivity : AppCompatActivity() {
 
         override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
             return ViewHolder(
-                LayoutInflater.from(activity).inflate(R.layout.rv_child_todolist, p0, false)
+                LayoutInflater.from(activity)
+                    .inflate(R.layout.rv_child_todolist, p0, false)
             )
         }
 

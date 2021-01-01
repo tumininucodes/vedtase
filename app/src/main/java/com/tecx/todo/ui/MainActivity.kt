@@ -1,9 +1,9 @@
-package com.tecx.todo
+package com.tecx.todo.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.tecx.todo.ui.TodoListActivity
+import com.tecx.todo.R
 
 class MainActivity : AppCompatActivity() {
 
