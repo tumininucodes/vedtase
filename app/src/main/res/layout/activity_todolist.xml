@@ -34,6 +34,7 @@
         android:contentDescription="@string/fab"
         android:src="@drawable/ic_add_black_24dp"
         app:fabCustomSize="52dp"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         app:rippleColor="@color/colorWhite" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
