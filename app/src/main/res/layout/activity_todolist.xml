@@ -1,41 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/dashboard_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
         android:background="@color/colorPrimary"
         android:elevation="2dp"
         app:title="@string/app_name"
         app:titleTextAppearance="@style/ActionBarText"
         app:titleTextColor="@color/colorWhite" />
 
-    <FrameLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_dashboard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:overScrollMode="always"
+        tools:listitem="@layout/rv_child_todolist" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_dashboard"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:overScrollMode="always" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_dashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/fab"
+        android:src="@drawable/ic_add_black_24dp"
+        app:fabCustomSize="52dp"
+        app:rippleColor="@color/colorWhite" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_dashboard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="16dp"
-            android:contentDescription="@string/fab"
-            android:elevation="40dp"
-            android:src="@drawable/ic_add_black_24dp"
-            app:rippleColor="@color/colorWhite" />
-    </FrameLayout>
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
