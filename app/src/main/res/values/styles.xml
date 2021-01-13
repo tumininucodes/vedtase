@@ -12,6 +12,7 @@
         <item name="colorSecondary">@color/colorPrimary</item>
         <item name="colorOnSecondary">@color/colorWhite</item>
         <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="android:navigationBarColor">@color/colorWhite</item>
     </style>
 
     <style name="MaterialAlertDialog.Rounded" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
