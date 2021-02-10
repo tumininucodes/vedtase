@@ -25,5 +25,7 @@
     <string name="backup">Backup</string>
     <string name="export">Export</string>
     <string name="developer_s_image">Developer\'s Image</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="light_mode">Light Mode</string>
 
 </resources>

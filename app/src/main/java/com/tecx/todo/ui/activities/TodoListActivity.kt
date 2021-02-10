@@ -1,17 +1,19 @@
-package com.tecx.todo.ui
+package com.tecx.todo.ui.activities
 
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.tecx.todo.db.DBHandler
 import com.tecx.todo.R
+import com.tecx.todo.db.DBHandler
 import com.tecx.todo.model.ToDo
+import com.tecx.todo.ui.adapter.TodoAdapter
 import kotlinx.android.synthetic.main.activity_todolist.*
 
 
@@ -25,6 +27,18 @@ class TodoListActivity : AppCompatActivity() {
         setSupportActionBar(dashboard_toolbar)
         dbHandler = DBHandler(this)
         rv_dashboard.layoutManager = LinearLayoutManager(this)
+
+        // Shared preferences for toggling light and dark modes
+        val isDarkOn: Boolean =
+            getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
+                .getBoolean("isDarkOn", false)
+
+        if (isDarkOn) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
 
         fab_dashboard.setOnClickListener {
             val dialog = MaterialAlertDialogBuilder(this)
@@ -57,6 +71,19 @@ class TodoListActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
+
+            R.id.menu_item_light_mode -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).edit()
+                    .putBoolean("isDarkOn", false).apply()
+            }
+
+            R.id.menu_item_dark_mode -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).edit()
+                    .putBoolean("isDarkOn", true).apply()
+            }
+
             R.id.menu_item_backup -> {
                 Toast.makeText(this, "coming soon", Toast.LENGTH_SHORT).show()
             }
@@ -108,61 +135,61 @@ class TodoListActivity : AppCompatActivity() {
         dialog.create().show()
     }
 
-    private fun refreshList() {
+    fun refreshList() {
         rv_dashboard.adapter =
-            DashboardAdapter(
+            TodoAdapter(
                 this,
                 dbHandler.getToDos()
             )
     }
 
 
-    class DashboardAdapter(
-        private val activity: TodoListActivity,
-        private val list: MutableList<ToDo>
-    ) :
-        RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
-
-        override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
-            return ViewHolder(
-                LayoutInflater.from(activity)
-                    .inflate(R.layout.rv_child_todolist, p0, false)
-            )
-        }
-
-        override fun getItemCount(): Int {
-            return list.size
-        }
-
-        override fun onBindViewHolder(holder: ViewHolder, p1: Int) {
-            holder.toDoName.text = list[p1].name
-
-            holder.menu.setOnClickListener {
-                val popup = PopupMenu(activity, holder.menu)
-                popup.inflate(R.menu.todo_item_menu)
-
-                popup.setOnMenuItemClickListener {
-                    when (it.itemId) {
-
-                        R.id.menu_edit -> {
-                            activity.updateToDo(list[p1])
-                        }
-
-                        R.id.menu_delete -> {
-                            activity.dbHandler.deleteToDo(list[p1].id)
-                            activity.refreshList()
-                        }
-                    }
-
-                    true
-                }
-                popup.show()
-            }
-        }
-
-        class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-            val toDoName: TextView = v.findViewById(R.id.tv_todo_name)
-            val menu: ImageView = v.findViewById(R.id.iv_menu)
-        }
-    }
+//    class TodoAdapter(
+//        private val activity: TodoListActivity,
+//        private val list: MutableList<ToDo>
+//    ) :
+//        RecyclerView.Adapter<TodoAdapter.ViewHolder>() {
+//
+//        override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
+//            return ViewHolder(
+//                LayoutInflater.from(activity)
+//                    .inflate(R.layout.rv_child_todolist, p0, false)
+//            )
+//        }
+//
+//        override fun getItemCount(): Int {
+//            return list.size
+//        }
+//
+//        override fun onBindViewHolder(holder: ViewHolder, p1: Int) {
+//            holder.toDoName.text = list[p1].name
+//
+//            holder.menu.setOnClickListener {
+//                val popup = PopupMenu(activity, holder.menu)
+//                popup.inflate(R.menu.todo_item_menu)
+//
+//                popup.setOnMenuItemClickListener {
+//                    when (it.itemId) {
+//
+//                        R.id.menu_edit -> {
+//                            activity.updateToDo(list[p1])
+//                        }
+//
+//                        R.id.menu_delete -> {
+//                            activity.dbHandler.deleteToDo(list[p1].id)
+//                            activity.refreshList()
+//                        }
+//                    }
+//
+//                    true
+//                }
+//                popup.show()
+//            }
+//        }
+//
+//        class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+//            val toDoName: TextView = v.findViewById(R.id.tv_todo_name)
+//            val menu: ImageView = v.findViewById(R.id.iv_menu)
+//        }
+//    }
 }

@@ -17,12 +17,12 @@
             app:navigationIcon="@drawable/ic_keyboard_arrow_left_black_24dp"
             app:title="About"
             app:titleTextAppearance="@style/ActionBarText"
-            app:titleTextColor="@color/colorBlack" />
+            app:titleTextColor="@color/colorWhite" />
 
 
         <androidx.cardview.widget.CardView
+            style="@style/CardView.Dark"
             android:layout_width="match_parent"
-            android:backgroundTint="#F5FFEB"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
@@ -63,11 +63,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            style="@style/CardView.Dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="#F5FFEB"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:elevation="4dp"

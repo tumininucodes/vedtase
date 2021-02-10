@@ -4,15 +4,17 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/dark</item>
         <item name="colorPrimaryVariant">@color/colorBlack</item>
+        <item name="android:textColor">#DAD5D5</item>
         <item name="colorAccent">@color/gray</item>
+        <item name="android:windowBackground">@color/dark</item>
         <item name="popupTheme">@style/Popup.round</item>
         <item name="materialAlertDialogTheme">@style/MaterialAlertDialog.Rounded</item>
-        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/colorPrimaryDark</item>
         <item name="colorOnSecondary">@color/colorWhite</item>
-        <item name="colorControlNormal">@color/colorBlack</item>
-        <item name="android:navigationBarColor">@color/colorWhite</item>
+        <item name="colorControlNormal">#DAD5D5</item>
+        <item name="android:navigationBarColor">@color/dark</item>
     </style>
 
     <style name="MaterialAlertDialog.Rounded" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
@@ -38,18 +40,18 @@
     </style>
 
     <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorWhite</item>
         <item name="fontFamily">@font/product_sans_regular</item>
     </style>
 
     <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorWhite</item>
         <item name="fontFamily">@font/product_sans_regular</item>
     </style>
 
     <style name="DialogTitleStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="fontFamily">@font/product_sans_regular</item>
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 
 </resources>

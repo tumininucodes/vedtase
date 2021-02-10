@@ -14,7 +14,7 @@
         app:menu="@menu/menu_about"
         app:title="@string/app_name"
         app:titleTextAppearance="@style/ActionBarText"
-        app:titleTextColor="@color/colorBlack" />
+        app:titleTextColor="@color/colorWhite" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dashboard"

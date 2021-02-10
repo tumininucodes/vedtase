@@ -1,4 +1,4 @@
-package com.tecx.todo.ui
+package com.tecx.todo.ui.activities
 
 import android.content.Intent
 import android.os.Bundle

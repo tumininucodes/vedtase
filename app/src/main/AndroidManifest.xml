@@ -10,9 +10,9 @@
         android:fullBackupContent="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.AboutMe" />
-        <activity android:name=".ui.TodoListActivity" />
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.activities.AboutMe" />
+        <activity android:name=".ui.activities.TodoListActivity" />
+        <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
