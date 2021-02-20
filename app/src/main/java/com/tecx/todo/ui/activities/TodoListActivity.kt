@@ -4,8 +4,10 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.view.*
-import android.widget.*
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -143,53 +145,4 @@ class TodoListActivity : AppCompatActivity() {
             )
     }
 
-
-//    class TodoAdapter(
-//        private val activity: TodoListActivity,
-//        private val list: MutableList<ToDo>
-//    ) :
-//        RecyclerView.Adapter<TodoAdapter.ViewHolder>() {
-//
-//        override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
-//            return ViewHolder(
-//                LayoutInflater.from(activity)
-//                    .inflate(R.layout.rv_child_todolist, p0, false)
-//            )
-//        }
-//
-//        override fun getItemCount(): Int {
-//            return list.size
-//        }
-//
-//        override fun onBindViewHolder(holder: ViewHolder, p1: Int) {
-//            holder.toDoName.text = list[p1].name
-//
-//            holder.menu.setOnClickListener {
-//                val popup = PopupMenu(activity, holder.menu)
-//                popup.inflate(R.menu.todo_item_menu)
-//
-//                popup.setOnMenuItemClickListener {
-//                    when (it.itemId) {
-//
-//                        R.id.menu_edit -> {
-//                            activity.updateToDo(list[p1])
-//                        }
-//
-//                        R.id.menu_delete -> {
-//                            activity.dbHandler.deleteToDo(list[p1].id)
-//                            activity.refreshList()
-//                        }
-//                    }
-//
-//                    true
-//                }
-//                popup.show()
-//            }
-//        }
-//
-//        class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-//            val toDoName: TextView = v.findViewById(R.id.tv_todo_name)
-//            val menu: ImageView = v.findViewById(R.id.iv_menu)
-//        }
-//    }
 }
