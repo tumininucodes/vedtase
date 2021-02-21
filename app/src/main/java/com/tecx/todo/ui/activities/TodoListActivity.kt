@@ -30,18 +30,6 @@ class TodoListActivity : AppCompatActivity() {
         dbHandler = DBHandler(this)
         rv_dashboard.layoutManager = LinearLayoutManager(this)
 
-        // Shared preferences for toggling light and dark modes
-        val isDarkOn: Boolean =
-            getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
-                .getBoolean("isDarkOn", false)
-
-        if (isDarkOn) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
-
-
         fab_dashboard.setOnClickListener {
             val dialog = MaterialAlertDialogBuilder(this)
             dialog.setTitle(getString(R.string.add_todo))
@@ -106,7 +94,7 @@ class TodoListActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        finishActivity(1)
+        finishAffinity()
     }
 
     override fun onResume() {

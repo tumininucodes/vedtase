@@ -11,7 +11,7 @@
         <item name="android:windowBackground">@color/dark</item>
         <item name="popupTheme">@style/Popup.round</item>
         <item name="materialAlertDialogTheme">@style/MaterialAlertDialog.Rounded</item>
-        <item name="colorSecondary">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorPrimary</item>
         <item name="colorOnSecondary">@color/colorWhite</item>
         <item name="colorControlNormal">#DAD5D5</item>
         <item name="android:navigationBarColor">@color/dark</item>

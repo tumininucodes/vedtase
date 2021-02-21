@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/todo_icon" />
+                    android:src="@drawable/ic_todo" />
 
                 <TextView
                     android:layout_width="wrap_content"
