@@ -34,7 +34,7 @@
         android:layout_weight="0"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/ic_more_horz"
+        android:src="@drawable/ic_more_vert"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_todo_name"
         app:layout_constraintTop_toTopOf="parent" />
