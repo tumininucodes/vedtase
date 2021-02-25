@@ -24,6 +24,7 @@ class TodoListActivity : AppCompatActivity() {
     lateinit var dbHandler: DBHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_todolist)
         setSupportActionBar(dashboard_toolbar)

@@ -10,18 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.SplashScreen">
+        <activity android:name=".ui.activities.SplashScreen" />
+        <activity android:name=".ui.activities.AboutMe" />
+        <activity
+            android:name=".ui.activities.TodoListActivity"
+            android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.AboutMe" />
-        <activity android:name=".ui.activities.TodoListActivity" />
-        <activity android:name=".ui.activities.MainActivity">
 
-        </activity>
     </application>
 
 </manifest>
