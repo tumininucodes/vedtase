@@ -26,6 +26,7 @@ class TodoListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
+        darkMode()
         setContentView(R.layout.activity_todolist)
         setSupportActionBar(dashboard_toolbar)
         dbHandler = DBHandler(this)
@@ -52,6 +53,19 @@ class TodoListActivity : AppCompatActivity() {
             dialog.create().show()
         }
 
+    }
+
+    fun darkMode() {
+        // Shared preferences for toggling light and dark modes
+        val isDarkOn: Boolean =
+            getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
+                .getBoolean("isDarkOn", false)
+
+        if (isDarkOn) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

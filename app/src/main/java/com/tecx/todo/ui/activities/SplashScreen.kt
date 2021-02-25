@@ -13,22 +13,13 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        // Shared preferences for toggling light and dark modes
-        val isDarkOn: Boolean =
-            getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
-                .getBoolean("isDarkOn", false)
 
-        if (isDarkOn) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
-
-        Handler().postDelayed(Runnable() {
-            run() {
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
-            }
-        }, 1500)
+//
+//        Handler().postDelayed(Runnable() {
+//            run() {
+//                startActivity(Intent(this, MainActivity::class.java))
+//                finish()
+//            }
+//        }, 1500)
     }
 }
