@@ -17,6 +17,10 @@
         <item name="android:navigationBarColor">@color/dark</item>
     </style>
 
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen_night</item>
+    </style>
+
     <style name="MaterialAlertDialog.Rounded" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
         <item name="shapeAppearanceOverlay">
             @style/ShapeAppearanceOverlay.MaterialAlertDialog.Rounded

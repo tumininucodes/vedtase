@@ -8,6 +8,7 @@
         <item name="colorPrimaryVariant">@color/colorBlack</item>
         <item name="colorAccent">@color/gray</item>
         <item name="popupTheme">@style/Popup.round</item>
+        <item name="android:windowBackground">@color/colorWhite</item>
         <item name="materialAlertDialogTheme">@style/MaterialAlertDialog.Rounded</item>
         <item name="colorSecondary">#2196F3</item>
         <item name="colorOnSecondary">@color/colorWhite</item>
