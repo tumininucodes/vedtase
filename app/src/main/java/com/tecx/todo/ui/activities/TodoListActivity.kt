@@ -24,9 +24,9 @@ class TodoListActivity : AppCompatActivity() {
     lateinit var dbHandler: DBHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        darkMode()
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
-        darkMode()
         setContentView(R.layout.activity_todolist)
         setSupportActionBar(dashboard_toolbar)
         dbHandler = DBHandler(this)
@@ -55,7 +55,7 @@ class TodoListActivity : AppCompatActivity() {
 
     }
 
-    fun darkMode() {
+    private fun darkMode() {
         // Shared preferences for toggling light and dark modes
         val isDarkOn: Boolean =
             getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
