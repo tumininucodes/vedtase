@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/product_sans_regular"
-        android:inputType="textAutoCorrect|textMultiLine|textCapSentences"
-        android:textColor="@color/gray" />
+        android:inputType="textAutoCorrect|textMultiLine|textCapSentences" />
 
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.tecx.todo.R
 import com.tecx.todo.model.ToDo
@@ -31,8 +32,30 @@ class TodoAdapter(
     override fun onBindViewHolder(holder: ViewHolder, p1: Int) {
         holder.toDoName.text = list[p1].name
 
-        holder.menu.setOnClickListener {
-            val popup = PopupMenu(activity, holder.menu)
+//        holder.menu.setOnClickListener {
+//            val popup = PopupMenu(activity, holder.menu)
+//            popup.inflate(R.menu.todo_item_menu)
+
+//            popup.setOnMenuItemClickListener {
+//                when (it.itemId) {
+//
+//                    R.id.menu_edit -> {
+//                        activity.updateToDo(list[p1])
+//                    }
+//
+//                    R.id.menu_delete -> {
+//                        activity.dbHandler.deleteToDo(list[p1].id)
+//                        activity.refreshList()
+//                    }
+//                }
+//
+//                true
+//            }
+//            popup.show()
+//        }
+
+        holder.itemView.setOnClickListener {
+            val popup = PopupMenu(activity, holder.itemView)
             popup.inflate(R.menu.todo_item_menu)
 
             popup.setOnMenuItemClickListener {
@@ -56,7 +79,7 @@ class TodoAdapter(
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val toDoName: TextView = v.findViewById(R.id.tv_todo_name)
-        val menu: ImageView = v.findViewById(R.id.iv_menu)
+//        val menu: ConstraintLayout = v.findViewById(R.id.todoItem)
     }
 }
 

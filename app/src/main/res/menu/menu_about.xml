@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <group>
-
         <item
             android:id="@+id/menu_item_about"
             android:title="@string/about" />
-
-        <item
-            android:id="@+id/menu_item_backup"
-            android:title="@string/backup" />
-
-        <item
-            android:id="@+id/menu_item_export"
-            android:title="@string/export" />
-
         <item
             android:id="@+id/menu_item_light_mode"
             android:title="@string/light_mode" />
-
         <item
             android:id="@+id/menu_item_dark_mode"
             android:title="@string/dark_mode" />
-
-    </group>
-
-
 </menu>

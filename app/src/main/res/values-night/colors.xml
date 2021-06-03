@@ -8,6 +8,6 @@
     <color name="colorBlack">#000000</color>
     <color name="dark">#121212</color>
     <color name="gray">#595959</color>
-    <color name="actionBar">@color/colorWhite</color>
-    <color name="textColor">@color/colorBlack</color>
+    <color name="actionBar">@color/dark</color>
+    <color name="textColor">@color/colorWhite</color>
 </resources>

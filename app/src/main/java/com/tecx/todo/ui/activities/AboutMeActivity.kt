@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.tecx.todo.R
 import kotlinx.android.synthetic.main.activity_about_me.*
 
-class AboutMe : AppCompatActivity() {
+class AboutMeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

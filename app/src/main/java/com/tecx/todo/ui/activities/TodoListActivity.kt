@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -89,16 +88,8 @@ class TodoListActivity : AppCompatActivity() {
                     .putBoolean("isDarkOn", true).apply()
             }
 
-            R.id.menu_item_backup -> {
-                Toast.makeText(this, "coming soon", Toast.LENGTH_SHORT).show()
-            }
-
-            R.id.menu_item_export -> {
-                Toast.makeText(this, "coming soon", Toast.LENGTH_SHORT).show()
-            }
-
             R.id.menu_item_about -> {
-                startActivity(Intent(this, AboutMe::class.java))
+                startActivity(Intent(this, AboutMeActivity::class.java))
                 finish()
                 finishActivity(0)
             }

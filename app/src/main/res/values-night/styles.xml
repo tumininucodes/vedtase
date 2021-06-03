@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/dark</item>
         <item name="colorPrimaryDark">@color/dark</item>
-        <item name="colorPrimaryVariant">@color/colorBlack</item>
+        <item name="colorPrimaryVariant">@color/dark</item>
         <item name="android:textColor">#DAD5D5</item>
         <item name="colorAccent">@color/gray</item>
         <item name="android:windowBackground">@color/dark</item>

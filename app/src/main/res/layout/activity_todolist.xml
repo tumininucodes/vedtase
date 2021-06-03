@@ -6,15 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/dashboard_toolbar"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="start|top"
-        app:menu="@menu/menu_about"
-        app:title="@string/app_name"
-        app:titleTextAppearance="@style/ActionBarText"
-        app:titleTextColor="@color/colorBlack" />
+        android:background="@color/actionBar"
+        android:elevation="2dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/dashboard_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|top"
+            app:menu="@menu/menu_about"
+            app:title="@string/app_name"
+            app:titleTextAppearance="@style/ActionBarText"
+            app:titleTextColor="@color/textColor" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dashboard"
