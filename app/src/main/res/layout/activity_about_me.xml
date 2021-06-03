@@ -53,11 +53,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/textColor"
                     android:layout_gravity="center_horizontal"
                     android:fontFamily="@font/product_sans_regular"
                     android:text="@string/app_name" />
 
                 <TextView
+                    android:textColor="@color/textColor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -107,6 +109,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/textColor"
                     android:layout_gravity="center_horizontal"
                     android:fontFamily="@font/product_sans_regular"
                     android:text="@string/designed_and_developed_by" />
@@ -115,6 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:textColor="@color/textColor"
                     android:fontFamily="@font/product_sans_regular"
                     android:text="@string/tumininu_ojo"
                     android:textSize="18sp" />
@@ -130,6 +134,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
+                        android:textColor="@color/textColor"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:text="@string/oluwatumininuojo25_gmail_com" />
@@ -148,6 +153,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/textColor"
                         android:layout_marginStart="4dp"
                         android:text="@string/https_github_com_tumininucodes" />
 

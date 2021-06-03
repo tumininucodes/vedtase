@@ -90,8 +90,6 @@ class TodoListActivity : AppCompatActivity() {
 
             R.id.menu_item_about -> {
                 startActivity(Intent(this, AboutMeActivity::class.java))
-                finish()
-                finishActivity(0)
             }
         }
 
