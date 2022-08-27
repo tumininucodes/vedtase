@@ -8,3 +8,4 @@ A simple to-do application to facilitate productivity
 ## Uses
 * Material Design  
 * SQLite DB
+* Kotlin Extensions
